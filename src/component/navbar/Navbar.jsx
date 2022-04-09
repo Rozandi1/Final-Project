@@ -20,7 +20,7 @@ export default function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/wisata" className="nav-link px-2 text-white">
+                  <Link to="/wisata2" className="nav-link px-2 text-white">
                     Wisata
                   </Link>
                 </li>
