@@ -1,0 +1,42 @@
+h1 {
+  font-size: 45px;
+}
+#paragraph {
+  direction: initial;
+  text-indent: 40px;
+  line-height: 2;
+  text-align: justify;
+  margin: 0px 400px 0px 400px;
+  display: block;
+  font-size: x-large;
+}
+#p2 {
+  direction: initial;
+  text-indent: 40px;
+  line-height: 2;
+  text-align: justify;
+  margin: 0px 400px 0px 400px;
+  display: block;
+  font-size: x-large;
+}
+#bungin {
+  width: 1500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#logo {
+  width: 50px;
+}
+
+.logo {
+  width: 302px;
+}
+
+footer {
+  background-color: #666666;
+}
+
+.Footer-bottom {
+  background-color: #333333;
+}

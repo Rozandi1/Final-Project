@@ -1,0 +1,13 @@
+#Artikel p {
+  font-size: 13px;
+}
+
+/* @media (min-width: 767px) {
+    #kenawa {
+        margin-top: 90px;
+      }
+  } */
+
+#comment p {
+  font-size: 12px;
+}

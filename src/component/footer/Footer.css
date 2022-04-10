@@ -1,0 +1,18 @@
+#footer h2 {
+    color: #f1d00a;
+}
+#footer p {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+#footer a {
+    text-decoration: none;
+}
+#footer i {
+    color: white;
+}
+#ending td {
+    color: white;
+    font-size: 14px;
+}
