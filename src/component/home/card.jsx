@@ -29,28 +29,26 @@ export default function PromosiCard() {
             }
 </div>
 </div> */}
-      <section id="budaya">
+      <section id="kuliner">
         <div className="container-fluid py-md-5">
           <div className="container">
-            {promosi.map((promosi) => {
-              return (
-                <div className="row py-3 ">
-                  <div className="card border-0 shadow" key={promosi.id}>
-                    <div className="card-body">
-                      <div className="row align-items-center ">
-                        <div className="col-md-4 col-12">
-                          <img src={promosi.image} alt="" className="img-fluid" style={{ borderRadius: "6%", width: "350px", height: "auto" }} />
-                        </div>
-                        <div className="col-md-8 col-12 mt-4 mt-md-0">
-                          <h3>{promosi.title}</h3>
-                          <p>{promosi.description}</p>
+            <div className="row justify-content-center ">
+              {promosi.map((promosi) => {
+                return (
+                  <div className="col-md-3 col-12 mt-3" key={promosi.id}>
+                    <div class="card h-100 border-0 shadow p-2" style={{ borderRadius: "5%" }}>
+                      <img src={promosi.image} class="img-responsive" alt="..." style={{ height: "200px", objectFit: "cover", objectPosition: "center center", borderRadius: "5%" }} />
+                      <div className="container-fluid">
+                        <div class="card-body">
+                          <h5 class="card-title">{promosi.title}</h5>
+                          <p class="card-text">{promosi.description}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
