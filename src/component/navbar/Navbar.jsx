@@ -1,26 +1,36 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Logo from "../../assets/image/LogoSumbawa1.png";
-import AuthModal from "../modal/AuthModal";
-import "./Navbar.css";
-import { useSelector, useDispatch } from "react-redux";
-import { Dropdown } from "react-bootstrap";
-import { CustomToggle } from "../dropdown/AvatarDropdown";
-import { clearCurrentUser } from "../../redux/auth/action";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../assets/image/LogoSumbawa1.png';
+import AuthModal from '../modal/AuthModal';
+import './Navbar.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { Dropdown } from 'react-bootstrap';
+import { CustomToggle } from '../dropdown/AvatarDropdown';
+import { clearCurrentUser } from '../../redux/auth/action';
 
 function Navbar() {
-  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const [background, setBackground] = useState(false);
   const dispatch = useDispatch();
 
   const { displayName } = useSelector((state) => state.auth.currentUser);
 
-  const handleOpenModal = () => {
-    setShow(true);
+  const handleOpenModalLogin = () => {
+    setShowLogin(true);
+  };
+
+  const handleOpenModalRegister = () => {
+    setShowRegister(true);
   };
 
   const handleSignOut = () => {
     dispatch(clearCurrentUser());
+  };
+
+  const handleChangeModal = () => {
+    setShowLogin(!showLogin);
+    setShowRegister(!showRegister);
   };
 
   const checkScroll = () => {
@@ -34,15 +44,18 @@ function Navbar() {
     }
   };
 
-  window.addEventListener("scroll", checkScroll);
+  window.addEventListener('scroll', checkScroll);
 
   return (
     <>
       <section id='navbarAll'>
         <nav
-          className='navbar navbar-expand-lg navbar-dark shadow-sm fixed-top'
+          className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+            background && 'shadow-sm'
+          }`}
           style={{
-            backgroundColor: background && "#3e497a",
+            backgroundColor: background && '#3e497a',
+            transition: 'background-color 0.5s ease',
           }}>
           <div className='container'>
             <img src={Logo} alt='' width='100' />
@@ -100,18 +113,37 @@ function Navbar() {
                       </Dropdown.Menu>
                     </Dropdown>
                   ) : (
-                    <button
-                      className='btn text-light'
-                      onClick={handleOpenModal}>
-                      Sign In
-                    </button>
+                    <>
+                      <button
+                        className='btn text-light'
+                        onClick={handleOpenModalLogin}
+                        style={{ boxShadow: 'none' }}>
+                        Sign In
+                      </button>
+                      <button
+                        className='btn text-light'
+                        onClick={handleOpenModalRegister}
+                        style={{ boxShadow: 'none' }}>
+                        Sign Up
+                      </button>
+                    </>
                   )}
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-        <AuthModal show={show} setShow={setShow} />
+        <AuthModal
+          show={showLogin}
+          setShow={setShowLogin}
+          handleChange={handleChangeModal}
+        />
+        <AuthModal
+          show={showRegister}
+          setShow={setShowRegister}
+          handleChange={handleChangeModal}
+          register
+        />
       </section>
     </>
   );

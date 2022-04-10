@@ -1,13 +1,15 @@
 import {
+  createUserWithEmailAndPassword,
   FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-} from "firebase/auth";
-import swal from "sweetalert";
-import auth from "../../config/firebase";
-import { AUTH } from "../constant";
+  updateProfile,
+} from 'firebase/auth';
+import swal from 'sweetalert';
+import auth from '../../config/firebase';
+import { AUTH } from '../constant';
 
 export const loginWithEmail = (data) => (dispatch) => {
   const { email, password } = data;
@@ -26,7 +28,7 @@ export const loginWithEmail = (data) => (dispatch) => {
           payload: user,
         });
 
-        swal("Yay!", "Login Success!", "success");
+        swal('Yay!', 'Login Success!', 'success');
 
         resolve(user);
       })
@@ -39,7 +41,7 @@ export const loginWithEmail = (data) => (dispatch) => {
           payload: message,
         });
 
-        swal("Oops!", "Login Failed!", "error");
+        swal('Oops!', 'Login Failed!', 'error');
 
         reject({ code, message });
       });
@@ -67,7 +69,7 @@ export const loginWithGoogle = () => (dispatch) => {
           payload: user,
         });
 
-        swal("Yay!", "Login Success!", "success");
+        swal('Yay!', 'Login Success!', 'success');
 
         resolve(user);
       })
@@ -87,7 +89,7 @@ export const loginWithGoogle = () => (dispatch) => {
           payload: errorMessage,
         });
 
-        swal("Oops!", "Login Failed!", "error");
+        swal('Oops!', 'Login Failed!', 'error');
 
         reject(errorMessage);
       });
@@ -116,7 +118,7 @@ export const loginWithFacebook = () => (dispatch) => {
           payload: user,
         });
 
-        swal("Yay!", "Login Success!", "success");
+        swal('Yay!', 'Login Success!', 'success');
 
         resolve(user);
       })
@@ -137,7 +139,7 @@ export const loginWithFacebook = () => (dispatch) => {
           payload: errorMessage,
         });
 
-        swal("Oops!", "Login Failed!", "error");
+        swal('Oops!', 'Login Failed!', 'error');
 
         reject(errorCode);
       });
@@ -152,10 +154,60 @@ export const clearCurrentUser = () => (dispatch) => {
         type: AUTH.SIGN_OUT,
       });
 
-      swal("Good Bye!", "Sign Out Success!", "success");
+      swal('Good Bye!', 'Sign Out Success!', 'success');
     })
     .catch((error) => {
       // An error happened.
-      swal("Something was wrong!", error.message, "error");
+      swal('Something was wrong!', error.message, 'error');
     });
+};
+
+export const createUserWithEmail = (data) => (dispatch) => {
+  const { email, password, fullName } = data;
+
+  dispatch({
+    type: AUTH.LOAD,
+  });
+
+  return new Promise((resolve, reject) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: fullName,
+          photoURL:
+            'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
+        });
+      })
+      .then(() => {
+        dispatch({
+          type: AUTH.LOAD_SUCCESS,
+          payload: auth.currentUser,
+        });
+
+        swal({
+          title: 'Yay!',
+          text: 'Akunmu Berhasil Dibuat!',
+          icon: 'success',
+        });
+
+        resolve(auth.currentUser);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        dispatch({
+          type: AUTH.LOAD_ERROR,
+          payload: errorCode,
+        });
+
+        swal({
+          title: 'Oops!',
+          text: errorCode || 'Something when wrong!',
+          icon: 'error',
+        });
+        console.log(errorCode, errorMessage);
+        reject(errorMessage);
+      });
+  });
 };
