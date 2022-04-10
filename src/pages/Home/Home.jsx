@@ -3,7 +3,7 @@ import React from 'react';
 import './Home.css';
 import PromosiCard from '../../component/home/card';
 import Default from '../../layout/Default';
-import { Container, Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import CardSlider from '../../component/swiperCard/CardSlider';
 
 export default function Home() {
@@ -27,11 +27,6 @@ export default function Home() {
               </p>
             </div>
           </Container>
-          {/* <Image
-            src='../../assets/image/randall-ruiz-LVnJlyfa7Zk-unsplash.jpg'
-            className='w-100 h-100'
-            style={{ objectFit: 'cover' }}
-          /> */}
         </div>
 
         <CardSlider />
