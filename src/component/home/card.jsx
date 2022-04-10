@@ -29,19 +29,28 @@ export default function PromosiCard() {
             }
 </div>
 </div> */}
-      <section id="budaya">
-        <div className="container-fluid py-md-5">
-          <div className="container">
+      <section id='budaya'>
+        <div className='container-fluid py-md-5'>
+          <div className='container'>
             {promosi.map((promosi) => {
               return (
-                <div className="row py-3 ">
-                  <div className="card border-0 shadow" key={promosi.id}>
-                    <div className="card-body">
-                      <div className="row align-items-center ">
-                        <div className="col-md-4 col-12">
-                          <img src={promosi.image} alt="" className="img-fluid" style={{ borderRadius: "6%", width: "350px", height: "auto" }} />
+                <div className='row py-3 '>
+                  <div className='card border-0 shadow' key={promosi.id}>
+                    <div className='card-body'>
+                      <div className='row align-items-center '>
+                        <div className='col-md-4 col-12'>
+                          <img
+                            src={promosi.image}
+                            alt=''
+                            className='img-fluid'
+                            style={{
+                              borderRadius: "6%",
+                              width: "350px",
+                              height: "auto",
+                            }}
+                          />
                         </div>
-                        <div className="col-md-8 col-12 mt-4 mt-md-0">
+                        <div className='col-md-8 col-12 mt-4 mt-md-0'>
                           <h3>{promosi.title}</h3>
                           <p>{promosi.description}</p>
                         </div>
