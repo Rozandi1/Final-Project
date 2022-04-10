@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export default function PromosiCard() {
   const [promosi, setPromosi] = useState([]);
 
   async function fetchCardPromosi() {
-    fetch("https://west-broad-gerbil.glitch.me/home")
+    fetch('https://west-broad-gerbil.glitch.me/home')
       .then((response) => response.json())
       .then((data) => setPromosi(data))
       .catch((err) => console.log(err));
@@ -44,9 +44,9 @@ export default function PromosiCard() {
                             alt=''
                             className='img-fluid'
                             style={{
-                              borderRadius: "6%",
-                              width: "350px",
-                              height: "auto",
+                              borderRadius: '6%',
+                              width: '350px',
+                              height: 'auto',
                             }}
                           />
                         </div>
