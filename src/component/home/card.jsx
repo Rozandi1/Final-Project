@@ -29,19 +29,31 @@ export default function PromosiCard() {
             }
 </div>
 </div> */}
-      <section id="kuliner">
-        <div className="container-fluid py-md-5">
-          <div className="container">
-            <div className="row justify-content-center ">
+      <section id='kuliner'>
+        <div className='container-fluid py-md-5'>
+          <div className='container'>
+            <div className='row justify-content-center '>
               {promosi.map((promosi) => {
                 return (
-                  <div className="col-md-3 col-12 mt-3" key={promosi.id}>
-                    <div class="card h-100 border-0 shadow p-2" style={{ borderRadius: "5%" }}>
-                      <img src={promosi.image} class="img-responsive" alt="..." style={{ height: "200px", objectFit: "cover", objectPosition: "center center", borderRadius: "5%" }} />
-                      <div className="container-fluid">
-                        <div class="card-body">
-                          <h5 class="card-title">{promosi.title}</h5>
-                          <p class="card-text">{promosi.description}</p>
+                  <div className='col-md-3 col-12 mt-3' key={promosi.id}>
+                    <div
+                      class='card h-100 border-0 shadow p-2'
+                      style={{ borderRadius: "5%" }}>
+                      <img
+                        src={promosi.image}
+                        class='img-responsive'
+                        alt='...'
+                        style={{
+                          height: "200px",
+                          objectFit: "cover",
+                          objectPosition: "center center",
+                          borderRadius: "5%",
+                        }}
+                      />
+                      <div className='container-fluid'>
+                        <div class='card-body'>
+                          <h5 class='card-title'>{promosi.title}</h5>
+                          <p class='card-text'>{promosi.description}</p>
                         </div>
                       </div>
                     </div>

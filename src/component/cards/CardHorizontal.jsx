@@ -1,9 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CardHorizontal = (props) => {
   const { data } = props;
-  console.log(data);
   return (
     <>
       {data &&
@@ -12,14 +11,14 @@ const CardHorizontal = (props) => {
             to={item.id}
             key={`cardWisata-${idx}`}
             className='card mb-3 shadow text-decoration-none text-dark'
-            style={{ width: "800px" }}>
+            style={{ width: '800px' }}>
             <div className='row g-0'>
               <div className='col-md-4'>
                 <img
                   style={{
-                    width: "300px",
-                    height: "200px",
-                    objectFit: "cover ",
+                    width: '300px',
+                    height: '200px',
+                    objectFit: 'cover ',
                   }}
                   src={item.image}
                   className='img-fluid rounded-start'
