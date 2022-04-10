@@ -21,7 +21,6 @@ export const loginWithEmail = (data) => (dispatch) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
 
         dispatch({
           type: AUTH.LOAD_SUCCESS,
@@ -57,12 +56,10 @@ export const loginWithGoogle = () => (dispatch) => {
     signInWithPopup(auth, new GoogleAuthProvider())
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        console.log(token);
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user);
         // ...
         dispatch({
           type: AUTH.LOAD_SUCCESS,
@@ -108,9 +105,8 @@ export const loginWithFacebook = () => (dispatch) => {
         const user = result.user;
 
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        const credential = FacebookAuthProvider.credentialFromResult(result);
-        const accessToken = credential.accessToken;
-        console.log(user, accessToken);
+        // const credential = FacebookAuthProvider.credentialFromResult(result);
+        // const accessToken = credential.accessToken;
 
         // ...
         dispatch({

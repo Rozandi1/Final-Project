@@ -17,8 +17,6 @@ function Navbar() {
 
   const { pathname } = location;
 
-  console.log(pathname);
-
   const { displayName } = useSelector((state) => state.auth.currentUser);
 
   const handleOpenModalLogin = () => {
