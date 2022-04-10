@@ -66,7 +66,7 @@ export default function Kuliner() {
     <>
       <Default totalItem={purchasedItem}>
         <div className='container'>
-          <div className='pt-5 mt-4 text-start'>
+          <div className='pt-5 mt-4  text-start'>
             <h3 className='display-7 fw-bold'>Makanan Khas Pulau Sumbawa</h3>
             <div className='col-xl-12 col-lg-6 mx-auto'>
               <p className='lead mb-3'>
