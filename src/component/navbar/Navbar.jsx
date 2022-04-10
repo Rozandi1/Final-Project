@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/image/LogoSumbawa1.png';
 import AuthModal from '../modal/AuthModal';
 import './Navbar.css';
@@ -13,6 +13,11 @@ function Navbar() {
   const [showRegister, setShowRegister] = useState(false);
   const [background, setBackground] = useState(false);
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const { pathname } = location;
+
+  console.log(pathname);
 
   const { displayName } = useSelector((state) => state.auth.currentUser);
 
@@ -35,7 +40,9 @@ function Navbar() {
 
   const checkScroll = () => {
     const scroll = window.scrollY;
-    if (scroll > 50) {
+    if (pathname !== '/') {
+      setBackground(true);
+    } else if (scroll > 50) {
       setBackground(true);
     } else if (background === true) {
       setBackground(false);
@@ -46,6 +53,11 @@ function Navbar() {
 
   window.addEventListener('scroll', checkScroll);
 
+  useEffect(() => {
+    checkScroll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+
   return (
     <>
       <section id='navbarAll'>
@@ -55,7 +67,7 @@ function Navbar() {
           }`}
           style={{
             backgroundColor: background && '#3e497a',
-            transition: 'background-color 0.5s ease',
+            transition: pathname !== '/' && 'background-color 0.5s ease',
           }}>
           <div className='container'>
             <img src={Logo} alt='' width='100' />
