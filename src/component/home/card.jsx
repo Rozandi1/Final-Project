@@ -32,9 +32,9 @@ export default function PromosiCard() {
       <section id='budaya'>
         <div className='container-fluid py-md-5'>
           <div className='container'>
-            {promosi.map((promosi) => {
+            {promosi.map((promosi, index) => {
               return (
-                <div className='row py-3 '>
+                <div key={`promosi-card-${index}`} className='row py-3 '>
                   <div className='card border-0 shadow' key={promosi.id}>
                     <div className='card-body'>
                       <div className='row align-items-center '>

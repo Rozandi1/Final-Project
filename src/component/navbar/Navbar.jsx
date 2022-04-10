@@ -10,6 +10,7 @@ import { clearCurrentUser } from "../../redux/auth/action";
 
 function Navbar() {
   const [show, setShow] = useState(false);
+  const [background, setBackground] = useState(false);
   const dispatch = useDispatch();
 
   const { displayName } = useSelector((state) => state.auth.currentUser);
@@ -22,12 +23,27 @@ function Navbar() {
     dispatch(clearCurrentUser());
   };
 
+  const checkScroll = () => {
+    const scroll = window.scrollY;
+    if (scroll > 50) {
+      setBackground(true);
+    } else if (background === true) {
+      setBackground(false);
+    } else {
+      setBackground(false);
+    }
+  };
+
+  window.addEventListener("scroll", checkScroll);
+
   return (
     <>
       <section id='navbarAll'>
         <nav
-          className='navbar navbar-expand-lg navbar-dark shadow-sm'
-          style={{ backgroundColor: "#3e497a" }}>
+          className='navbar navbar-expand-lg navbar-dark shadow-sm fixed-top'
+          style={{
+            backgroundColor: background && "#3e497a",
+          }}>
           <div className='container'>
             <img src={Logo} alt='' width='100' />
             <button
