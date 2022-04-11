@@ -25,7 +25,7 @@ function Kuliner() {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h2>Budaya di Pulau Sumbawa</h2>
+                <h2>Kuliner di Pulau Sumbawa</h2>
                 <p>Destinasi rekomendasi dan hal unik Sumbawa</p>
               </div>
             </div>
