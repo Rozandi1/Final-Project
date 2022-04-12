@@ -15,7 +15,7 @@ function App() {
         <Route path="/landing-page" element={<LandingPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/Wisata" element={<Wisata />} />
-        <Route path="/Wisata/:WisataId" element={<Details />} />
+        <Route path="/Wisata/:wisataId" element={<Details />} />
         <Route path="/Budaya" element={<Budaya />} />
         <Route path="/Kuliner" element={<Kuliner />} />
         <Route path="*" element={<NotFound />} />

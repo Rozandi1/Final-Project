@@ -43,11 +43,11 @@ function Kuliner() {
               {kuliner.map((kuliner) => {
                 return (
                   <div className="col-md-3 col-12 mt-3" key={kuliner.id}>
-                    <div class="card h-100 border-0 shadow p-2" style={{ borderRadius: "5%" }}>
-                      <img src={kuliner.image} class="img-responsive" alt="..." style={{ height: "200px", objectFit: "cover", objectPosition: "center center", borderRadius: "5%" }} />
-                      <div class="card-body">
-                        <h5 class="card-title">{kuliner.name}</h5>
-                        <p class="card-text">{kuliner.description}</p>
+                    <div className="card h-100 border-0 shadow p-2" style={{ borderRadius: "5%" }}>
+                      <img src={kuliner.image} className="img-responsive" alt="..." style={{ height: "200px", objectFit: "cover", objectPosition: "center center", borderRadius: "5%" }} />
+                      <div className="card-body">
+                        <h5 className="card-title">{kuliner.name}</h5>
+                        <p className="card-text">{kuliner.description}</p>
 
                       </div>
                     </div>

@@ -37,11 +37,11 @@ export default function PromosiCard() {
                 return (
                   <div className='col-md-3 col-12 mt-3' key={promosi.id}>
                     <div
-                      class='card h-100 border-0 shadow p-2'
+                      className='card h-100 border-0 shadow p-2'
                       style={{ borderRadius: "5%" }}>
                       <img
                         src={promosi.image}
-                        class='img-responsive'
+                        className='img-responsive'
                         alt='...'
                         style={{
                           height: "200px",
@@ -51,9 +51,9 @@ export default function PromosiCard() {
                         }}
                       />
                       <div className='container-fluid'>
-                        <div class='card-body'>
-                          <h5 class='card-title'>{promosi.title}</h5>
-                          <p class='card-text'>{promosi.description}</p>
+                        <div className='card-body'>
+                          <h5 className='card-title'>{promosi.title}</h5>
+                          <p className='card-text'>{promosi.description}</p>
                         </div>
                       </div>
                     </div>

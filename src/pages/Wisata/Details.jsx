@@ -10,7 +10,7 @@ const Details = () => {
   const { wisataId } = useParams();
   useEffect(() => {
     dispatch(setCurrentWisata(wisataId));
-  });
+  }, [dispatch, wisataId]);
   return (
     <Default>
       {currentWisata ? (
