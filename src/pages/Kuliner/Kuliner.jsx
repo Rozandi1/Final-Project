@@ -20,6 +20,7 @@ function Kuliner() {
       <Navbar />
 
       {/* Title */}
+
       <section id="title">
         <div className="contaoner-fluid py-5 mt-4">
           <div className="container">
@@ -34,6 +35,7 @@ function Kuliner() {
       </section>
 
       {/* Description */}
+
       <section id="kuliner">
         <div className="container-fluid py-md-3">
           <div className="container">
@@ -46,6 +48,7 @@ function Kuliner() {
                       <div class="card-body">
                         <h5 class="card-title">{kuliner.name}</h5>
                         <p class="card-text">{kuliner.description}</p>
+
                       </div>
                     </div>
                   </div>

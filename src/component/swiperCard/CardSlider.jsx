@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper';
+import { EffectCoverflow, Pagination } from "swiper";
 
 export default function CardSlider() {
   return (
     <>
       <Swiper
-        effect={'coverflow'}
+        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         loop={true}
         loopFillGroupWithBlank={true}
         coverflowEffect={{
@@ -26,28 +26,28 @@ export default function CardSlider() {
         modules={[EffectCoverflow, Pagination]}
         className='mySwiper'>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649607243/budaya/rimpu_ljoa7d.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-2.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649400147/wisata/pantai_oabgjx.png' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-3.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649607252/budaya/tenun_idiqwf.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-4.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649696279/wisata/tess/moyoo_umpk23.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-5.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649696279/wisata/tess/keboo_xtsvxq.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-6.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649696279/wisata/tess/kenawaaaaaa_rianqf.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-7.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649696490/wisata/tess/mantarrrr_rf1dg0.jpg' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-8.jpg' />
+          <img src='https://res.cloudinary.com/djvggstwx/image/upload/v1649696490/wisata/tess/bedilll_ivhwyv.jpg' />
         </SwiperSlide>
       </Swiper>
     </>

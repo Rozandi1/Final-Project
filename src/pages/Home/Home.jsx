@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 // import { Link } from "react-router-dom";
-import './Home.css';
-import PromosiCard from '../../component/home/card';
-import Default from '../../layout/Default';
-import { Container } from 'react-bootstrap';
-import CardSlider from '../../component/swiperCard/CardSlider';
+import "./Home.css";
+import PromosiCard from "../../component/home/card";
+import Default from "../../layout/Default";
+import { Container } from "react-bootstrap";
+import CardSlider from "../../component/swiperCard/CardSlider";
 
 export default function Home() {
   return (
@@ -13,9 +13,8 @@ export default function Home() {
         <div
           className='w-100 vh-100'
           style={{
-            backgroundImage:
-              'url(../../assets/image/randall-ruiz-LVnJlyfa7Zk-unsplash.jpg)',
-            backgroundPosition: 'center',
+            backgroundImage: "url(../../assets/image/Artikel.png)",
+            backgroundPosition: "center",
           }}>
           <Container className='h-100'>
             <div className='d-flex flex-column justify-content-center text-light h-100'>
