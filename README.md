@@ -1,1 +1,1 @@
-# Visit Sumbawa
+# Visit Sumbawa Island
